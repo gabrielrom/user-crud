@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Fj1WTyM2H/5RYYhH8SiookQLqNf4T9oYtk0nxnOe+oKuQt17ApvBQHKbmRlTBpDgJjt+qon3HkxNbwQLYzrNoA==",
+  "dgSpecHash": "SJqnv7n7gnfDunuhn+Oqmko6yBmkyqDVDTYIMfSA9FzqzAUDa6gV4xKaJArQLKm66KAcS5KEYc4LkDQs+OWaqQ==",
   "success": true,
   "projectFilePath": "/home/gabrielrom/Documents/learning/dotnet/user-crud/user-crud.csproj",
   "expectedPackageFiles": [
+    "/home/gabrielrom/.nuget/packages/bcrypt.net-next/4.0.2/bcrypt.net-next.4.0.2.nupkg.sha512",
     "/home/gabrielrom/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/gabrielrom/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/home/gabrielrom/.nuget/packages/microsoft.entityframeworkcore/5.0.6/microsoft.entityframeworkcore.5.0.6.nupkg.sha512",
