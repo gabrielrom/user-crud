@@ -38,3 +38,4 @@
 /home/gabrielrom/Documents/learning/dotnet/user-crud/obj/Debug/netcoreapp3.1/user-crud.csproj.CopyComplete
 /home/gabrielrom/Documents/learning/dotnet/user-crud/bin/Debug/netcoreapp3.1/Humanizer.dll
 /home/gabrielrom/Documents/learning/dotnet/user-crud/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Design.dll
+/home/gabrielrom/Documents/learning/dotnet/user-crud/bin/Debug/netcoreapp3.1/BCrypt.Net-Next.dll

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using user_crud.Error;
+using BC = BCrypt.Net.BCrypt;
 
 namespace user_crud.Services {
 
@@ -28,10 +29,12 @@ namespace user_crud.Services {
         throw new AppError("This email is already in use");
       }
 
+      string hashPassword = BC.HashPassword(data.password);
+
       User user = await this._usersRepository.Create(new ICreateDTO() {
         name = data.name,
         email = data.email,
-        password = data.password
+        password = hashPassword,
       });
 
       return user;
