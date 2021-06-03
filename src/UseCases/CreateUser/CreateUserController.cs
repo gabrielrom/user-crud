@@ -21,14 +21,18 @@ namespace user_crud.Controllers {
     }
 
     [HttpPost]
-    public async Task<User> Handle([FromBody] IRequestBody request) {
+    public async Task<Object> Handle([FromBody] IRequestBody request) {
       User user = await this._createUserService.Execute(new IRequest() {
           name = request.name,
           email = request.email,
           password = request.password,
       });
 
-      return user;
+      return new {
+        id = user.id,
+        name = user.name,
+        email = user.email,
+      };
     }
 
   }
