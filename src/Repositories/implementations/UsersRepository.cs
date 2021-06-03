@@ -27,7 +27,8 @@ namespace user_crud {
     }
 
     public User FindByEmail(string email) {
-      User user = (from data in repository.Users
+      User user = (
+        from data in repository.Users
         where data.email == email
         select data).FirstOrDefault();
 

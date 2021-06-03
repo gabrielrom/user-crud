@@ -23,9 +23,9 @@ namespace user_crud.Controllers {
     [HttpPost]
     public async Task<Object> Handle([FromBody] IRequestBody request) {
       User user = await this._createUserService.Execute(new IRequest() {
-          name = request.name,
-          email = request.email,
-          password = request.password,
+        name = request.name,
+        email = request.email,
+        password = request.password,
       });
 
       return new {
