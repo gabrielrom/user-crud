@@ -20,8 +20,8 @@
     "user_crud": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "weatherforecast",
-      "applicationUrl": "https://localhost:5001;http://localhost:5000",
+      "launchUrl": "users",
+      "applicationUrl": "https://localhost:3333",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

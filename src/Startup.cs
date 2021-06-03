@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using user_crud.Error;
 
 namespace user_crud {
   public class Startup {
@@ -21,7 +23,13 @@ namespace user_crud {
     public IConfiguration Configuration { get; }
 
     public void ConfigureServices(IServiceCollection services) {
+      services.AddEntityFrameworkNpgsql()
+      .AddDbContext<DataContext>(options => options.UseNpgsql(
+        this.Configuration.GetConnectionString("BaseDB")
+      ));
+
       services.AddControllers();
+      services.AddScoped<IUsersRepository, UsersRepository>();
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
@@ -31,6 +39,8 @@ namespace user_crud {
 
       app.UseHttpsRedirection();
       app.UseRouting();
+
+      app.UseMiddleware<GlobalError>();
       app.UseAuthorization();
 
       app.UseEndpoints(endpoints => {
