@@ -34,7 +34,7 @@ namespace user_crud.Services {
       User user = await this._usersRepository.Create(new ICreateDTO() {
         name = data.name,
         email = data.email,
-        password = hashPassword,
+        password = hashPassword
       });
 
       return user;

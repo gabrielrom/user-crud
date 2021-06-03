@@ -25,7 +25,7 @@ namespace user_crud.Controllers {
       User user = await this._createUserService.Execute(new IRequest() {
           name = request.name,
           email = request.email,
-          password = request.password
+          password = request.password,
       });
 
       return user;
