@@ -26,6 +26,12 @@ namespace user_crud {
       return user;
     }
 
+    public async Task Delete(User user) {
+      repository.Users.Remove(user);
+
+      await repository.SaveChangesAsync();
+    }
+
     public User FindByEmail(string email) {
       User user = (
         from data in repository.Users

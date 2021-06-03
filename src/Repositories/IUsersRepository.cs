@@ -12,7 +12,7 @@ namespace user_crud {
     Task<User> Create(ICreateDTO data);
     User FindByEmail(string email);
     User FindById(string id);
-
     Task Save();
+    Task Delete(User user);
   }
 }

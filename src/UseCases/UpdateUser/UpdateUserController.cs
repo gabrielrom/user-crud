@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 using user_crud.Services;
 
 namespace user_crud.Controllers {
-
   public class IRequestPutBody {
     public string name {get; set;}
     public string email { get; set;}
@@ -20,7 +19,10 @@ namespace user_crud.Controllers {
     }
 
     [HttpPut("{id}")]
-    public async Task<NoContentResult> Handle(string id, [FromBody] IRequestPutBody data) {
+    public async Task<NoContentResult> Handle(
+      string id, 
+      [FromBody] IRequestPutBody data
+    ) {
       await this._updateUserService.Execute(new IRequestPut() {
         id = id,
         name = data.name,
