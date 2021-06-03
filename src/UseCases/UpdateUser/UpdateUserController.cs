@@ -20,7 +20,7 @@ namespace user_crud.Controllers {
     }
 
     [HttpPut("{id}")]
-    public async Task<Object> Handle(string id, [FromBody] IRequestPutBody data) {
+    public async Task<NoContentResult> Handle(string id, [FromBody] IRequestPutBody data) {
       await this._updateUserService.Execute(new IRequestPut() {
         id = id,
         name = data.name,
