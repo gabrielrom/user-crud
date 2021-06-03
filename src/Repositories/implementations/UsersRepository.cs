@@ -43,5 +43,9 @@ namespace user_crud {
 
       return user;
     }
+
+    public async Task Save() {
+      await repository.SaveChangesAsync();
+    }
   }
 }
