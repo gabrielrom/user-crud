@@ -11,5 +11,6 @@ namespace user_crud {
   public interface IUsersRepository {
     Task<User> Create(ICreateDTO data);
     User FindByEmail(string email);
+    User FindById(string id);
   }
 }

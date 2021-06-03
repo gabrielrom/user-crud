@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using user_crud.Error;
+using user_crud.Utils;
 using BC = BCrypt.Net.BCrypt;
 
 namespace user_crud.Services {
@@ -15,12 +16,22 @@ namespace user_crud.Services {
   }
   public class CreateUserService {
     private IUsersRepository _usersRepository;
+    private VerifyEmail _verifyEmail;
 
     public CreateUserService(IUsersRepository usersRepository) {
       _usersRepository = usersRepository;
+      _verifyEmail = new VerifyEmail();
     }
 
     public async Task<User> Execute(IRequest data) {
+      if (String.IsNullOrEmpty(data.email)) {
+        throw new AppError("You cannot send an empty email");
+      }
+
+      if (!this._verifyEmail.EmailIsValid(data.email)) {
+        throw new AppError("This email is not valid!");
+      }
+
       User userAlreadyExists = this._usersRepository.FindByEmail(
         data.email
       );

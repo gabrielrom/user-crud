@@ -34,5 +34,14 @@ namespace user_crud {
 
       return user;
     }
+
+    public User FindById(string id) {
+      User user = (
+        from data in repository.Users
+        where data.id == id
+        select data).FirstOrDefault();
+
+      return user;
+    }
   }
 }

@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using user_crud.Error;
+using user_crud.Utils;
 
 namespace user_crud {
   public class Startup {
