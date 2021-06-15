@@ -1,4 +1,3 @@
-using System;
 using Microsoft.EntityFrameworkCore;
 
 namespace user_crud {
@@ -7,8 +6,8 @@ namespace user_crud {
 
     public DataContext(DbContextOptions<DataContext> options) : base(options) {}
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder) {
-      modelBuilder.Entity<User>().HasKey(c => c.id);
-    }
+    protected override void OnModelCreating(ModelBuilder modelBuilder) => 
+      modelBuilder.Entity<User>()
+      .HasKey(c => c.id);
   }
 }

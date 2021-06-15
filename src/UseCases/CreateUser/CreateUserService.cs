@@ -1,8 +1,5 @@
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Identity;
 using user_crud.Error;
 using user_crud.Utils;
 using BC = BCrypt.Net.BCrypt;

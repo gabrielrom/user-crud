@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using user_crud.Services;
+using user_crud.Utils;
 
 namespace user_crud.Controllers {
   public class IRequestBody {
@@ -11,11 +12,11 @@ namespace user_crud.Controllers {
     public string password { get; set; }
   }
 
-
   [ApiController]
   [Route("/users")]
   public class CreateUserController : ControllerBase {
     private CreateUserService _createUserService;
+    
     public CreateUserController(IUsersRepository usersRepository) {
       this._createUserService = new CreateUserService(usersRepository);
     }

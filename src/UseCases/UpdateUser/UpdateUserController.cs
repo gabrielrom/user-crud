@@ -1,10 +1,9 @@
-using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using user_crud.Services;
 
-namespace user_crud.Controllers {
+namespace user_crud.Controllers
+{
   public class IRequestPutBody {
     public string name {get; set;}
     public string email { get; set;}
@@ -31,6 +30,5 @@ namespace user_crud.Controllers {
 
       return NoContent();
     }
-
   }
 }

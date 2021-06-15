@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using user_crud.Services;
@@ -9,6 +7,7 @@ namespace user_crud.Controllers {
   [Route("/users")]
   public class DeleteUserController : ControllerBase {
     private DeleteUserService _deleteUserService;
+    
     public DeleteUserController(IUsersRepository usersRepository) {
       this._deleteUserService = new DeleteUserService(usersRepository);
     }

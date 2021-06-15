@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using user_crud.Services;
 
@@ -10,6 +8,7 @@ namespace user_crud.Controllers {
   [Route("/users")]
   public class ListUserByIdController : ControllerBase {
     private ListUserByIdService _listUserByIdService;
+    
     public ListUserByIdController(IUsersRepository usersRepository) {
       this._listUserByIdService = new ListUserByIdService(usersRepository);
     }

@@ -2,7 +2,6 @@ using System;
 using System.Net;
 using System.Text.Json;
 using System.Threading.Tasks;
-using System.Collections.Generic;
 using Microsoft.AspNetCore.Http;
 
 namespace user_crud.Error {
